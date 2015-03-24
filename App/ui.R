@@ -9,14 +9,23 @@ shinyUI(fluidPage(
   # Sidebar with a slider input for the number of bins
   sidebarLayout(
     sidebarPanel(
-      sliderInput("bins",
-                  "Number of bins:",
-                  min = 1,
-                  max = 50,
-                  value = 30)
+      # Indicators
+      h4("Indicators"),
+      # Selection of the available indicators
+      selectInput("selectMeasure", label = h5("Measure"), 
+                  choices = lst.measures, 
+                  selected = 1),
+      # Selection of the available measures
+      selectInput("selectIndicator", label = h5("Indicator"), 
+                  choices = lst.vars, 
+                  selected = 1),
+    # Select the dates for the data
+    sliderInput("sliderYears", label = h5("Years"), min = yr.min, 
+                max = yr.max, value = c(2000, 2010), sep = "",
+                step = 1, animate = TRUE)
     ),
     
-    # Show a plot of the generated distribution
+    # Show the generated plot and the data
     mainPanel(
       plotOutput("distPlot")
     )
