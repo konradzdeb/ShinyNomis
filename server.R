@@ -6,8 +6,7 @@ shinyServer(function(input, output) {
   # Download the data from NOMIS and run other data cleaning
   source('global.R', local=TRUE)
   
-  output$distPlot <- renderPlot({
-    
-
+  output$testText <- renderPrint({
+    input$selectMeasure
   })
 })

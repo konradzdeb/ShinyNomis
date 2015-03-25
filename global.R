@@ -13,9 +13,6 @@ dta.nom <- dta.nom[complete.cases(dta.nom),]
 
 # Create values for the interface
 
-## Crteate list of unique local authorities
-lst.conuncils <- as.list(unique(dta.nom$GEOGRAPHY_NAME))
-
 ## Create list of unique variables
 ### Convert to character
 dta.nom$MEASURES_NAME = as.character(dta.nom$MEASURES_NAME)
@@ -28,7 +25,6 @@ dta.nom$ITEM_NAME <- as.character(dta.nom$ITEM_NAME)
 ### Create unique list
 lst.vars <- unique(dta.nom$ITEM_NAME)
 
-
 # Get dates for the slider
 ## Delete pointless month
 dta.nom$DATE_NAME <- sub("February ", replacement = "", x = dta.nom$DATE_NAME)
@@ -36,3 +32,6 @@ dta.nom$DATE_NAME <- sub("February ", replacement = "", x = dta.nom$DATE_NAME)
 dta.nom$DATE_NAME <- as.numeric(x = dta.nom$DATE_NAME)
 yr.min <- min(dta.nom$DATE_NAME)
 yr.max <- max(dta.nom$DATE_NAME)
+
+# Create list of geographies
+lst.councils <- unique(dta.nom$GEOGRAPHY_NAME)
