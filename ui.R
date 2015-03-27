@@ -24,7 +24,7 @@ shinyUI(fluidPage(theme = shinytheme("flatly"),
                 max = yr.max, value = c(2000, 2010), sep = "",
                 step = 1, animate = FALSE),
     # Provide selections for local authorities
-    # Chart aesthetics
+    # Chart Aesthetics
     h4("Aesthetics"),
     # Line width
     sliderInput("sliderLine", label = h5("Line width"), min = 0, max = 10,

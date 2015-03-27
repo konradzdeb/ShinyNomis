@@ -3,7 +3,7 @@ library(shiny); require(ggplot2); require(grid)
 
 shinyServer(function(input, output) {
   
-  # Download the data from NOMIS and run other data cleaning
+  # Run the data download from NOMIS and run other data cleaning
   source('global.R', local=TRUE)
   
   # Render chart

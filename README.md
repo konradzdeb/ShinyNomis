@@ -1,7 +1,7 @@
 # ShinyNomis
 The following simple shiny app was developed for the purposes of sourcing the live data from NOMIS into R. The app makes use of the [NOMIS API](https://www.nomisweb.co.uk/).
 
-### Running the App
+### Running the ShinyApp
 The most convenient way of running this application would include going to the [Shiny App Website](https://konrad.shinyapps.io/ShinyNomis/). As I'm running my app from the free account, the app may not work if too many users is accessing it in the same time. The alternative is to run the app from GitHub using the code below:
 ```r
 shiny::runGitHub('ShinyNomis', 'konradedgar')
