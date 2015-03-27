@@ -34,4 +34,7 @@ yr.min <- min(dta.nom$DATE_NAME)
 yr.max <- max(dta.nom$DATE_NAME)
 
 # Create list of geographies
+## Convert to character
+dta.nom$GEOGRAPHY_NAME <- as.character(dta.nom$GEOGRAPHY_NAME)
+## Create list of unique values
 lst.councils <- unique(dta.nom$GEOGRAPHY_NAME)
