@@ -19,7 +19,8 @@ shinyServer(function(input, output) {
     ## Legend rows are adjusted according to geographies
     g <- guide_legend(title = "Geography", title.position = 'top',
                       nrow = (if(length(unique(dta.chrt$GEOGRAPHY_NAME)) > 5) 2
-                        else 1))
+                        else 1),
+                      title.theme = element_text(size = 14, face = 'bold', angle = 360))
     # Graph something
     ggplot(data = dta.chrt, aes(x = DATE_NAME, y = OBS_VALUE)) +
       geom_line(aes(linetype = GEOGRAPHY_NAME, colour = GEOGRAPHY_NAME),
